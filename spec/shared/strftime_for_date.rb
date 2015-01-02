@@ -258,19 +258,13 @@ describe :strftime_date, :shared => true do
     time.strftime('%_-^5h').should == 'FEB'
     time.strftime('%^ha').should == 'FEBa'
 
-    expected = {
-      "%10h" => '       Feb',
-      "%^10h" => '       FEB',
-      "%_10h" => '       Feb',
-      "%_010h" => '0000000Feb',
-      "%0_10h" => '       Feb',
-      "%0_-10h" => 'Feb',
-      "%0-_10h" => 'Feb'
-    }
-
-    ["%10h","%^10h","%_10h","%_010h","%0_10h","%0_-10h","%0-_10h"].each do |format|
-      time.strftime(format).should == expected[format]
-    end
+    time.strftime("%10h").should == '       Feb'
+    time.strftime("%^10h").should == '       FEB'
+    time.strftime("%_10h").should == '       Feb'
+    time.strftime("%_010h").should == '0000000Feb'
+    time.strftime("%0_10h").should == '       Feb'
+    time.strftime("%0_-10h").should == 'Feb'
+    time.strftime("%0-_10h").should == 'Feb'
   end
 
   it "supports the '-' modifier to drop leading zeros" do
