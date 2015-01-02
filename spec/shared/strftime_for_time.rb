@@ -128,10 +128,6 @@ describe :strftime_time, :shared => true do
     it "formats a time with fixed offset as '+/-HH:MM:SS' with '::' specifier" do
       @new_time_with_offset[2012, 1, 1, 0, 0, 0, 3665].strftime("%::z").should == "+01:01:05"
     end
-
-    it "rounds fixed offset to the nearest second" do
-      @new_time_with_offset[2012, 1, 1, 0, 0, 0, Rational(36645, 10)].strftime("%::z").should == "+01:01:05"
-    end
   end
 
   # Combining conversion specifiers
