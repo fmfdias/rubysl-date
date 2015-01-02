@@ -232,8 +232,8 @@ class Date
 	s.scan(/./) do |k|
 	  case k
 	  when '-'; f[:p] = '-'
-	  when '_'; f[:p] = "\s"
-	  when '0'; f[:p] = '0'
+	  when '_'; f[:p] = "\s" unless f[:p] == '-'
+	  when '0'; f[:p] = '0'  unless f[:p] == '-'
 	  when '^'; f[:u] = true
 	  when '#'; f[:x] = true
 	  end
