@@ -143,10 +143,11 @@ describe "Date#strptime" do
     Date.strptime("Sun Apr  9 00:00:00 +00:00 2000", "%+").should == Date.civil(2000, 4, 9)
     Date.strptime("Sun Apr  9 00:00:00 +00:00 2000", "%a %b %e %H:%M:%S %Z %Y").should == Date.civil(2000, 4, 9)
   end
-  it "parses a date with a Time Zone" do
-      Date.strptime('31 Dec 2014 11:12:13 UTC', '%d %b %Y %T %Z')
-  end
 
+  it "parses a date with a Time Zone" do
+    d = Date.strptime('31 Dec 2014 11:12:13 UTC', '%d %b %Y %T %Z')
+    d.should be_an_instance_of(Date)
+  end
 end
 
 describe "Date.strptime" do
