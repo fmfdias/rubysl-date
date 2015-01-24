@@ -4,7 +4,7 @@ describe "Date#marshal_load" do
   with_timezone("PST", +1) do
     before do
       @date = Date.new(2011, 7, 9)
-      @dumped = [0, 2455752, 0, 0, 0, 2299161.0]
+      @dumped = [0, (4911503/2r), 0, 0, 0, 2299161]
       @loaded = Date.new
       @loaded.marshal_load(@dumped)
     end

@@ -8,7 +8,7 @@ describe "Date#marshal_dump" do
     end
 
     it "dumps self" do
-      @dumped.should == [0, 2455752, 0, 0, 0, 2299161]
+      @dumped.should == [0, (4911503/2r), 0, 0, 0, 2299161]
     end
 
     it "dumps @ajd within some bounds" do
